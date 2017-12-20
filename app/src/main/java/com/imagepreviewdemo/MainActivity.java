@@ -57,11 +57,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void showPreView(int position){
-        preView.setVisibility(View.VISIBLE);
-        backGround.setVisibility(View.VISIBLE);
-
-        preView=(ImagesPreView)findViewById(R.id.preView);
-        backGround=(FrameLayout)findViewById(R.id.bg);
+        final ImagesPreView preView=(ImagesPreView)findViewById(R.id.preView);
+        final FrameLayout backGround=(FrameLayout)findViewById(R.id.bg);
         //添加图片资源
         List<Integer>resources=new ArrayList<Integer>();
         resources.add(R.drawable.timg_1);
@@ -88,8 +85,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         preView.setOnTouchUpListener(new ScaleImagView.OnTouchUpListener() {
             @Override
             public void onTouchUp() {
-                backGround.setVisibility(View.GONE);
-                preView.setVisibility(View.GONE);
             }
         });
         //设置图片滑动监听
@@ -100,6 +95,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
     }
+
+
 
 
 }
