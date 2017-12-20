@@ -63,7 +63,7 @@ public class ScaleImagView extends android.support.v7.widget.AppCompatImageView 
             windowH=dm.heightPixels;
             beginH=getHeight();
             beginTop=getTop();
-            Log.e("top",beginH+"");
+            //Log.e("top",beginH+"");
             i=1;
         }
     }
@@ -84,7 +84,7 @@ public class ScaleImagView extends android.support.v7.widget.AppCompatImageView 
                 touchUpEnable=false;
                 break;
             case MotionEvent.ACTION_POINTER_DOWN:
-                Log.e("place","down_2");
+                //Log.e("place","down_2");
                 //多点触摸
                 moveType=2;
                 beforeScale=getScaleLength(event);
@@ -96,7 +96,7 @@ public class ScaleImagView extends android.support.v7.widget.AppCompatImageView 
                     int moveY=y-beginY;
                     if (scrollListener!=null){
                         scrollListener.onScroll((getTop()-beginTop)*100/windowH);
-                        Log.e("onScroll",(getTop()-beginTop)*100/windowH+"");
+                        //Log.e("onScroll",(getTop()-beginTop)*100/windowH+"");
                     }
 
                     if (backGround!=null&&getWidth()==windowW){
@@ -105,10 +105,10 @@ public class ScaleImagView extends android.support.v7.widget.AppCompatImageView 
                         if (b>0){
                             int c= (int) (b*100);
                             int alpha=(100-c)*0xff/100;
-                            Log.e("alpha",alpha+"   "+b);
+                            //Log.e("alpha",alpha+"   "+b);
                             backGround.getBackground().setAlpha(alpha);
                         }
-                        Log.e("onScroll",b+"");
+                        //Log.e("onScroll",b+"");
                     }
                     layout(getLeft()+moveX,getTop()+moveY,getRight()+moveX,getBottom()+moveY);
                 }else {
